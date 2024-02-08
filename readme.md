@@ -1,42 +1,47 @@
-# TodoMVC: React
+# TodoMVC Testing Framework
 
-## Description
+This project was done as an assignment for Houseware internship application. This repository contains a testing framework for the TodoMVC app using Playwright and @playwright/test. The framework is designed to test various aspects of the TodoMVC application, including CRUD operations and toggle functionalities.
 
-This application uses React 17.0.2 to implement a todo application.
+## Test Cases
 
--   [React](https://reactjs.org/) is a JavaScript library for creating user interfaces.
+### Test Group 1 : CRUD Operations
 
-## Implementation details
+#### Before Test Method 
+Add 2 dummy items to the List and check if they are correctly added by verifying the number of items and their text value
 
-React focuses mainly on providing composable user interfaces to enable developers to build an appealing website or web app. React does not force the user to utilize a particular design pattern, but it does provide useful hooks to implement an MVC pattern, if desired. 
+#### 1. Check Addition of New Item
 
-React:\
-Model: Todo reducer (reducer.js)\
-View: React ui components\
-Controller: App component + useReducer hook
+This test case checks the addition of a new item to the TodoMVC app. It verifies that the new item is correctly added to the list.
 
-MVC:\
-Model: Maintains the data and behavior of an application\
-View: Displays the model in the ui\
-Controller: Serves as an interface between view & model components
+#### 2. Check Deletion of Item
 
-## Build steps
+This test case checks the deletion of a todo item. It hovers over the first item, clicks the delete button, and ensures that the item is removed from the list.
 
-To build the static files, this application utilizes webpack. It minifies and optimizes output files and copies all necessary files to a `dist` folder.
+#### 3. Check Updation of Todo Item
 
-## Requirements
+This test case checks the updation of a todo item. It double-clicks on the first item, updates the text, and ensures that the item is correctly updated in the list.
 
-The only requirement is an installation of Node, to be able to install dependencies and run scripts to serve a local server.
+### Test Group 2 : Toggle Functionalities
 
-```
-* Node (min version: 18.13.0)
-* NPM (min version: 8.19.3)
-```
+#### Before Test Method : 
+Add 3 dummy items to the List and check if they are correctly added by verifying the number of items and their text value
 
-## Local preview
+#### 4. Check Toggle for Single Item
 
-```
-terminal:
-1. npm install
-2. npm run start
-```
+This test case checks the toggle functionality for a single todo item. It toggles the completion status, navigates to the Active and Completed sections, and ensures that the items are correctly filtered based on their completion status.
+
+#### 5. Check Toggle All Button
+
+This test case checks the "Toggle All" button functionality. It toggles all items, verifies that all items are completed, and then checks the behavior in the Active and Completed sections.
+
+## Project Structure
+
+
+- **`/testConstants`**: Defines constants used across tests.
+- **`/tests`**: Contains test files organized by functionality.
+
+## Dependencies
+
+- **@playwright/test**: Testing library for end-to-end testing.
+- **constants**: Node.js built-in module for constants.
+
